@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Deploying to $1"
+
+scp release/* root@$1:/mnt/packages/
