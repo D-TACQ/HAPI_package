@@ -1,19 +1,25 @@
 #!/bin/bash
-# Quench Detect, a custom DSP package
+# Custom HAPI package creation.
 DC=$(date +%y%m%d%H%M)
 SEQ=38
 PKG=custom_hapi
-#PACKAGES=../../PACKAGES
 
+# Create release dir if it doesn't exist. 
 mkdir -p release/
 
+# Create an "old releases" dir and move all the old releases there.
+mkdir -p old_rel/ ; mv release/* old_rel/
+
+# Remove all old code. 
 rm -Rf opkg/*
 
+# Create new dir for code to be tgz'd. 
 mkdir -p opkg/usr/local/HAPI
  
+# Copy HAPI code to be tgz'd.
 cp -a acq400_hapi/* opkg/usr/local/HAPI
 
-
+# Tar the files
 tar cvzf release/${SEQ}-${PKG}-${DC}.tgz -C opkg .
 ls -l release/${SEQ}-${PKG}-${DC}.tgz
 #rm -f ${PACKAGES}/${SEQ}-${PKG}*
