@@ -1,0 +1,21 @@
+#!/bin/bash
+# Quench Detect, a custom DSP package
+DC=$(date +%y%m%d%H%M)
+SEQ=38
+PKG=custom_hapi
+#PACKAGES=../../PACKAGES
+
+mkdir -p release/
+
+rm -Rf opkg/*
+
+mkdir -p opkg/usr/local/HAPI
+ 
+cp -a acq400_hapi/* opkg/usr/local/HAPI
+
+
+tar cvzf release/${SEQ}-${PKG}-${DC}.tgz -C opkg .
+ls -l release/${SEQ}-${PKG}-${DC}.tgz
+#rm -f ${PACKAGES}/${SEQ}-${PKG}*
+#cp release/${SEQ}-${PKG}-${DC}.tgz ${PACKAGES}
+

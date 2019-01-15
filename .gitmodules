@@ -1,0 +1,3 @@
+[submodule "acq400_hapi"]
+	path = acq400_hapi
+	url = https://github.com/D-TACQ/acq400_hapi.git
