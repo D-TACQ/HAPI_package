@@ -18,6 +18,8 @@ mkdir -p opkg/usr/local/HAPI
  
 # Copy HAPI code to be tgz'd.
 cp -a acq400_hapi/* opkg/usr/local/HAPI
+# Remove data files to make a smaller tarball.
+rm -rf opkg/usr/local/HAPI/user_apps/DATA/*.dat
 
 # Tar the files
 tar cvzf release/${SEQ}-${PKG}-${DC}.tgz -C opkg .
