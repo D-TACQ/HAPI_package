@@ -15,7 +15,11 @@ rm -Rf opkg/*
 
 # Create new dir for code to be tgz'd. 
 mkdir -p opkg/usr/local/HAPI
- 
+
+# Create new dir for pythonpath script and copy script there. 
+mkdir -p opkg/etc/profile.d/ 
+cp ./hapi.sh opkg/etc/profile.d/
+
 # Copy HAPI code to be tgz'd.
 cp -a acq400_hapi/* opkg/usr/local/HAPI
 # Remove data files to make a smaller tarball.
