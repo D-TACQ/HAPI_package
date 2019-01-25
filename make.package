@@ -4,6 +4,8 @@ DC=$(date +%y%m%d%H%M)
 SEQ=38
 PKG=custom_hapi
 
+PACKAGES_OPT=../PACKAGES.OPT
+
 # Create release dir if it doesn't exist. 
 mkdir -p release/
 
@@ -28,6 +30,6 @@ rm -rf opkg/usr/local/HAPI/user_apps/DATA/*.dat
 # Tar the files
 tar cvzf release/${SEQ}-${PKG}-${DC}.tgz -C opkg .
 ls -l release/${SEQ}-${PKG}-${DC}.tgz
-#rm -f ${PACKAGES}/${SEQ}-${PKG}*
-#cp release/${SEQ}-${PKG}-${DC}.tgz ${PACKAGES}
+rm -f ${PACKAGES_OPT}/${SEQ}-${PKG}*
+cp release/${SEQ}-${PKG}-${DC}.tgz ${PACKAGES_OPT}
 
