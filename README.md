@@ -11,6 +11,6 @@
 ## build the package
 ./make.package
 
-## Package is included in PACKAGES.OPT for inclusion next release
+Package is included in PACKAGES.OPT for inclusion next release
 
 
